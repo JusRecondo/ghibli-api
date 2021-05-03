@@ -27,9 +27,9 @@ fetch("https://ghibliapi.herokuapp.com/films")
     console.log(peliculas);
 
     for( let i = 0; i < peliculas.length; i++) {
-        const pelicula    = document.createElement('article');
-        const titulo      = document.createElement('h2');
-        const descripcion = document.createElement('p');
+        let pelicula    = document.createElement('article');
+        let titulo      = document.createElement('h2');
+        let descripcion = document.createElement('p');
         catalogo.appendChild(pelicula);
         pelicula.appendChild(titulo);
         pelicula.appendChild(descripcion);
