@@ -11,15 +11,6 @@ body {
     padding: 10px 50px;
 }
 
-@media (min-width: 1024px) {
-    body {
-        padding: 20px 200px;
-    }
-
-    h1 {
-        font-size: 40px;
-    }
-}
 
 header {
     display: flex;
@@ -56,4 +47,14 @@ article:nth-child(odd) h2 {
 article:nth-child(even) h2 {
     background: #ece3d4;
     color: #19aa41;
+}
+
+@media (min-width: 1024px) {
+    body {
+        padding: 20px 200px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
 }
