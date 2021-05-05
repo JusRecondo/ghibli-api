@@ -17,15 +17,16 @@ https://ghibliapi.herokuapp.com/locations
 
  */
 
-const catalogo    = document.querySelector('#catalogo-peliculas');
+const catalogo = document.querySelector('#catalogo-peliculas');
 
 fetch("https://ghibliapi.herokuapp.com/films")
   .then(function (response) {
+    if(!response.ok) {
+      throw Error(response.statusText);
+    }
     return response.json();
   })
   .then(function (peliculas) {
-    console.log(peliculas);
-
     for( let i = 0; i < peliculas.length; i++) {
         let pelicula    = document.createElement('article');
         let titulo      = document.createElement('h2');
@@ -34,14 +35,12 @@ fetch("https://ghibliapi.herokuapp.com/films")
         pelicula.appendChild(titulo);
         pelicula.appendChild(descripcion);
         
-        titulo.innerHTML      = peliculas[i].title + ' - ' + peliculas[i].release_date;
-        descripcion.innerHTML = peliculas[i].description;
+        titulo.innerText      = peliculas[i].title + ' - ' + 
+        peliculas[i].release_date;
+
+        descripcion.innerText = peliculas[i].description;
     }
   })
   .catch(function(error) {
-      console.log(error);
+    throw Error(error);
   })
-
-
-
-
